@@ -1,17 +1,17 @@
 
-'use strict';
+import chai from 'chai'
+import sinon from 'sinon'
+import sinonChai from 'sinon-chai'
+import index from '../src'
 
-var expect;
-var chai = require('chai');
-var sinon = require('sinon');
-var sinonChai = require('sinon-chai');
+chai.use(sinonChai)
 
-chai.use(sinonChai);
+const { expect } = chai
 
-expect = chai.expect;
+describe('index', () => {
 
-describe('index', function () {
+  it('should run tests', () => {
+    expect(typeof sinon.spy(index)).to.equal('function')
+  })
 
-  it('should run tests');
-
-});
+})
