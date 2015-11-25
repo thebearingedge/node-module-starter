@@ -9,10 +9,10 @@
     "test": "mocha --compilers js:babel-core/register",
     "precover": "npm run lint",
     "cover": "babel-node node_modules/isparta/bin/isparta cover --report html --report lcov node_modules/mocha/bin/_mocha",
-    "prebuild": "npm run test",
-    "build": "babel src --out-dir dist",
-    "tdd": "mocha --compilers js:babel-core/register --reporter min --watch",
-    "prepublish": "npm run build"
+    "pretransform": "npm run test",
+    "transform": "babel src --out-dir lib",
+    "dev": "mocha --compilers js:babel-core/register --reporter min --watch",
+    "prepublish": "npm run transform"
   },
   "repository": {
     "type": "git",
