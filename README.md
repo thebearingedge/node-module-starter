@@ -1,7 +1,8 @@
 Node Module Starter
 ----
+- Babel 6
 - ESLint
-- Babel 6 (ES2015 Preset)
+- Mocha
 - Babel Istanbul
 
 
