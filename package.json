@@ -4,37 +4,32 @@
   "description": "change-me",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint src && eslint test",
-    "pretest": "npm run lint",
-    "test": "mocha --compilers js:babel-core/register",
-    "precover": "npm run lint",
-    "cover": "babel-node node_modules/isparta/bin/isparta cover --report html --report lcov node_modules/mocha/bin/_mocha",
-    "pretransform": "npm run test",
-    "transform": "babel src --out-dir lib",
-    "dev": "mocha --compilers js:babel-core/register --reporter min --watch",
-    "prepublish": "npm run transform"
+    "lint": "eslint src/*.js && eslint test/*.js",
+    "test": "mocha --compilers js:babel-register",
+    "tdd": "npm run -s test -- -w -R min",
+    "cover": "babel-node node_modules/.bin/babel-istanbul cover _mocha --",
+    "babel": "babel src --out-dir lib",
+    "prepublish": "npm run -s lint && npm run -s test && npm run -s babel"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thebearingedge/node-module-starter.git"
   },
-  "author": "Tim Davis",
+  "author": "",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/thebearingedge/node-module-starter/issues"
   },
   "homepage": "https://github.com/thebearingedge/node-module-starter#readme",
   "devDependencies": {
+    "@thebearingedge/test-utils": "1.0.16",
     "babel": "6.1.18",
     "babel-cli": "6.1.18",
-    "babel-core": "6.1.21",
     "babel-eslint": "4.1.5",
+    "babel-istanbul": "0.5.9",
     "babel-preset-es2015": "6.1.18",
-    "chai": "3.4.1",
+    "babel-register": "6.3.13",
     "eslint": "1.9.0",
-    "isparta": "4.0.0",
-    "mocha": "2.3.4",
-    "sinon": "1.17.2",
-    "sinon-chai": "2.8.0"
+    "mocha": "2.3.4"
   }
 }

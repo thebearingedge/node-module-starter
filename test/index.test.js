@@ -1,17 +1,9 @@
 
-import chai from 'chai'
-import sinon from 'sinon'
-import sinonChai from 'sinon-chai'
+import { expect } from '@thebearingedge/test-utils'
 import index from '../src'
 
-chai.use(sinonChai)
+describe('tests', () => {
 
-const { expect } = chai
-
-describe('index', () => {
-
-  it('should run tests', () => {
-    expect(typeof sinon.spy(index)).to.equal('function')
-  })
+  it('should run', () => expect(index).to.be.a('function'))
 
 })
