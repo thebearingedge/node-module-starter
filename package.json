@@ -1,25 +1,27 @@
 {
-  "name": "node-module-starter",
+  "name": "",
+  "private": true,
   "version": "0.0.0",
-  "description": "change-me",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "lint": "eslint src/*.js && eslint test/*.js",
-    "test": "mocha --compilers js:babel-register --require babel-polyfill",
-    "tdd": "npm run -s test -- -w -R min",
+    "test": "mocha --compilers js:babel-register -r babel-polyfill",
+    "tdd": "npm test -s -- -w -R min",
     "cover": "babel-node node_modules/.bin/babel-istanbul cover _mocha --",
-    "babel": "babel src --out-dir lib"
+    "build": "rimraf lib && babel src --out-dir lib",
+    "push": "npm run -s lint && npm test && npm run -s build && npm publish"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thebearingedge/node-module-starter.git"
+    "url": ""
   },
   "author": "",
-  "license": "MIT",
+  "license": "",
   "bugs": {
-    "url": "https://github.com/thebearingedge/node-module-starter/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/thebearingedge/node-module-starter#readme",
+  "homepage": "",
   "devDependencies": {
     "@thebearingedge/test-utils": "1.0.17",
     "babel": "6.1.18",
@@ -31,6 +33,7 @@
     "babel-preset-stage-2": "6.3.13",
     "babel-register": "6.3.13",
     "eslint": "1.9.0",
-    "mocha": "2.3.4"
+    "mocha": "2.3.4",
+    "rimraf": "2.4.4"
   }
 }

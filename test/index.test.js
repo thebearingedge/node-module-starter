@@ -1,6 +1,6 @@
 
 import { expect, rejected } from '@thebearingedge/test-utils'
-import foo from '../src/foo'
+import foo from '../src'
 
 describe('tests', () => {
 
