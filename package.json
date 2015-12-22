@@ -9,7 +9,7 @@
     "test": "mocha --compilers js:babel-register -r babel-polyfill",
     "tdd": "npm test -s -- -w -R min",
     "cover": "babel-node node_modules/.bin/babel-istanbul cover _mocha --",
-    "babel": "rimraf lib && babel src --out-dir lib",
+    "babel": "rimraf lib && babel src -d lib",
     "push": "npm run -s lint && npm test && npm run -s babel && npm publish"
   },
   "repository": {
