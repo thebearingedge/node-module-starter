@@ -1,4 +1,3 @@
-
-export default async function foo() {
+export const foo = async () => {
   throw new Error('bar')
 }

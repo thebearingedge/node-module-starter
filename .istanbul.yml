@@ -2,5 +2,6 @@ instrumentation:
   root: src
   include-all-sources: true
   verbose: true
+  excludes: ['*.test.js', '__test__.js']
 reporting:
   dir: "coverage"
