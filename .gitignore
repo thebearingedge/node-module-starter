@@ -2,4 +2,3 @@
 *.log
 coverage/
 node_modules/
-dist/
